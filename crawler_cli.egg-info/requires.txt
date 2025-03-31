@@ -1,0 +1,8 @@
+requests
+aiohttp
+beautifulsoup4
+qdrant-client
+sentence-transformers
+torch
+transformers
+scikit-learn

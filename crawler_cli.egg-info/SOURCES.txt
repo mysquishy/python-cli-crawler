@@ -1,0 +1,9 @@
+README.md
+main.py
+setup.py
+crawler_cli.egg-info/PKG-INFO
+crawler_cli.egg-info/SOURCES.txt
+crawler_cli.egg-info/dependency_links.txt
+crawler_cli.egg-info/entry_points.txt
+crawler_cli.egg-info/requires.txt
+crawler_cli.egg-info/top_level.txt
