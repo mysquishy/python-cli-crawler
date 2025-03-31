@@ -1,12 +1,72 @@
 {
-  "plugins": [
-    {
-      "name": "HeadingExtractor",
-      "enabled": true
+  "plugins": {
+    "AdvancedContentSummarizer": {
+      "enabled": true,
+      "settings": {
+        "model_name": "sshleifer/distilbart-cnn-12-6",
+        "max_length": 150,
+        "min_length": 40,
+        "do_sample": false
+      }
     },
-    {
-      "name": "ImageExtractor",
-      "enabled": true
+    "SentimentEnhancedSummarizer": {
+      "enabled": true,
+      "settings": {
+        "model_name": "sshleifer/distilbart-cnn-12-6",
+        "max_length": 130,
+        "min_length": 30,
+        "do_sample": false
+      }
+    },
+    "VisualAnalyzer": {
+      "enabled": true,
+      "settings": {
+        "resize": {
+          "width": 100,
+          "height": 100
+        }
+      }
+    },
+    "EntityRecognizer": {
+      "enabled": true,
+      "settings": {}
+    },
+    "KeywordExtractor": {
+      "enabled": true,
+      "settings": {
+        "top_k": 5,
+        "stopwords": ["the", "and", "for", "are", "but", "not"]
+      }
+    },
+    "ContentCategorizer": {
+      "enabled": true,
+      "settings": {
+        "keywords": {
+          "Sports": ["sport", "game", "team", "player", "match"],
+          "Politics": ["election", "government", "policy", "vote", "senate"],
+          "Technology": ["tech", "software", "hardware", "computer", "internet"],
+          "Entertainment": ["movie", "music", "concert", "television", "festival"]
+        }
+      }
+    },
+    "ContentEnricher": {
+      "enabled": true,
+      "settings": {
+        "enrichment": {
+          "level": 2,
+          "append_text": " [enriched]"
+        },
+        "api": {
+          "endpoint": "http://dummyapi",
+          "key": "dummy_key"
+        }
+      }
+    },
+    "TopicModeler": {
+      "enabled": true,
+      "settings": {
+        "num_topics": 3
+      }
     }
-  ]
+  }
 }
